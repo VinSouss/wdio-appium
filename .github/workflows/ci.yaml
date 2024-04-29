@@ -15,7 +15,7 @@ jobs:
           env:
             BROWSERSTACK_USER: ${{ env.BROWSERSTACK_USER }}
             BROWSERSTACK_KEY: ${{ env.BROWSERSTACK_KEY }}
-          run: npx wdio config/wdio.android.bs.conf.js --spec test/specs/android/add-note-screen.spec.ts
+          run: npx wdio config/wdio.android.bs.conf.ts --spec test/specs/android/add-note-screen.spec.ts
         - uses: actions/upload-artifact@v1
           if: failure()
           with:
