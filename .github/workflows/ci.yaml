@@ -13,8 +13,8 @@ jobs:
           run: npm install
         - name: Test
           env:
-            BBROWSERSTACK_USER: ${{ secrets.BS_USER }}
-            BROWSERSTACK_KEY: ${{ secrets.BS_KEY }}
+            BROWSERSTACK_USER: ${{ env.BROWSERSTACK_USER }}
+            BROWSERSTACK_KEY: ${{ env.BROWSERSTACK_KEY }}
           run: nox wdio config/wdio.android.bs.conf.js --spec test/specs/android/add-note-screen.spec.ts
         - uses: actions/upload-artifact@v1
           if: failure()
